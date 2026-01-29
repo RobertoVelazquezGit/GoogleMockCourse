@@ -13,8 +13,8 @@ public:
 
 class SomeMockedClass : public SomeClass {		
 	public:
-	MOCK_METHOD0(SomeMethod, void());
-	// Commented out MOCK_METHOD(void, SomeMethod, (), (override)); Newer versions of google mock
+	//MOCK_METHOD0(SomeMethod, void());
+	MOCK_METHOD(void, SomeMethod, (), (override));
 };	
 
 TEST(MockTest, MethodCallTest) {
@@ -32,7 +32,7 @@ TEST(SampleTest, BasicTest) {
 int main(int argc, char **argv)
 {
     std::cout << "Hello World!\n";
-	testing::InitGoogleTest(&argc, argv);
+	testing::InitGoogleMock(&argc, argv);
 	return RUN_ALL_TESTS();
 }
 
